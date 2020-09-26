@@ -41,6 +41,7 @@ class HomeActivity : DaggerAppCompatActivity() {
                             DividerItemDecoration.VERTICAL
                         )
                     )
+                    rv_movies.adapter = HomeAdapter(state.response.results)
                 }
                 is Error -> {
                     pb_home.visibility = View.GONE

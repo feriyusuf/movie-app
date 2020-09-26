@@ -26,5 +26,5 @@ abstract class HomeModule {
     @Binds
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
-    abstract fun bindHomeViewModelCallback(activity: HomeActivity): ViewModel
+    abstract fun bindHomeViewModelCallback(viewModel: HomeViewModel): ViewModel
 }
