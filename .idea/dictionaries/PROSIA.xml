@@ -2,6 +2,7 @@
   <dictionary name="PROSIA">
     <words>
       <w>mvvm</w>
+      <w>usecase</w>
     </words>
   </dictionary>
 </component>
