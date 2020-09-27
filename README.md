@@ -1,4 +1,4 @@
 # Movie App
-## Mastering Mobie Android (Online Course from Skill Academy by Ruang Guru)
+## Mastering Mobile Android (Online Course from Skill Academy by Ruang Guru)
 
-### This is for back up
+This is for back up
