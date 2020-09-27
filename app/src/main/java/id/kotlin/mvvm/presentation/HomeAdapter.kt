@@ -1,16 +1,14 @@
 package id.kotlin.mvvm.presentation
 
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import id.kotlin.mvvm.R
-import id.kotlin.mvvm.data.Result
 import id.kotlin.mvvm.domain.HomeEntity
-import id.kotlin.mvvm.presentation.HomeAdapter.HomeViewHolder
 import kotlinx.android.synthetic.main.item_home.view.*
-import java.lang.RuntimeException
 
 enum class Type {
     DATA,
@@ -66,6 +64,20 @@ class HomeAdapter(private val results: MutableList<HomeEntity.Result?>) : Adapte
         }
     }
 
+    fun showLoading() {
+        results.add(null)
+        Handler().post { notifyItemInserted(results.count().minus(1)) }
+    }
+
+    fun hideLoading() {
+        results.removeAt(results.count().minus(1))
+        Handler().post { notifyItemRemoved(results.count()) }
+    }
+
+    fun loadMore(results: MutableList<HomeEntity.Result?>) {
+        this.results.addAll(results)
+        Handler().post { notifyDataSetChanged() }
+    }
 
     inner class HomeViewHolder(itemView: View) : ViewHolder(itemView) {
 
