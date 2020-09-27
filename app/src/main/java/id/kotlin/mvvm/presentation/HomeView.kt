@@ -1,6 +1,5 @@
 package id.kotlin.mvvm.presentation
 
-import androidx.lifecycle.LiveData
 import id.kotlin.mvvm.domain.HomeEntity
 
 interface HomeView {

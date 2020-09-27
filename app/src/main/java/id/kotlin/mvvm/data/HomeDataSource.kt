@@ -1,6 +1,5 @@
 package id.kotlin.mvvm.data
 
-import id.kotlin.mvvm.BuildConfig
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

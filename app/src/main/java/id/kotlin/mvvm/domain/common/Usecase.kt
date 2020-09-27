@@ -2,7 +2,6 @@ package id.kotlin.mvvm.domain.common
 
 import id.kotlin.mvvm.domain.executor.PostExecutionThread
 import id.kotlin.mvvm.domain.executor.ThreadExecutor
-import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo

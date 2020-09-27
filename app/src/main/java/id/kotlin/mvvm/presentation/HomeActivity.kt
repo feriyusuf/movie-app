@@ -1,6 +1,8 @@
 package id.kotlin.mvvm.presentation
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,11 +37,12 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
     }
 
     override fun onShowLoading() {
-        TODO("Not yet implemented")
+        pb_home.visibility = View.VISIBLE
     }
 
     override fun onHideLoading() {
-        TODO("Not yet implemented")
+        pb_home.visibility = View.GONE
+        rv_movies.visibility = View.VISIBLE
     }
 
     override fun onSuccess(entity: HomeEntity) {
