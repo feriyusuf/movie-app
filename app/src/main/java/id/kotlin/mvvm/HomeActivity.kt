@@ -13,7 +13,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val viewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
-        viewModel.hello.observe(this, Observer { tv_home.text = it })
+        viewModel.name.postValue("Feri Yusuf")
+
+        val nameObserver = Observer<String> { name ->
+            tv_home.text = name
+        }
+
+        viewModel.name.observe(this, nameObserver)
 
     }
 }
