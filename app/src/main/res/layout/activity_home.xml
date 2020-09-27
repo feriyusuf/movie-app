@@ -17,23 +17,15 @@
         app:title="Movies"
         app:titleTextColor="@color/black" />
 
-    <ProgressBar
-        android:id="@+id/pb_home"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_movies"
+    <TextView
+        android:id="@+id/tv_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="?actionBarSize"
-        android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Content" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
