@@ -12,11 +12,11 @@ class JobExecutor : ThreadExecutor {
         10,
         TimeUnit.SECONDS,
         LinkedBlockingQueue(),
-
+        JobThreadFactory()
         )
 
     override fun execute(command: Runnable?) {
-        command?.let { }
+        command?.let { threadPoolExecutor.execute(it) }
     }
 }
 
