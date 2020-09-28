@@ -59,14 +59,14 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
         rv_movies.addOnScrollListener(object : OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (currentPage > entity.totalPages || isLoading) return
+                if (currentPage >= entity.totalPages || isLoading) return
 
                 val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
                 val visibleItemCount = layoutManager.childCount
                 val totalItemCount = layoutManager.itemCount
 
-                if (visibleItemCount.plus(firstVisibleItemPosition) > totalItemCount) {
+                if (visibleItemCount.plus(firstVisibleItemPosition) >= totalItemCount) {
                     adapter?.showLoading()
                     isLoading = true
                     currentPage++
