@@ -1,10 +1,15 @@
 package id.kotlin.mvvm.presentation
 
-import androidx.lifecycle.LiveData
+import id.kotlin.mvvm.domain.HomeEntity
 
 interface HomeView {
 
-    val states: LiveData<HomeViewState>
+    fun onShowLoading()
+    fun onHideLoading()
 
-    fun discoverMovie()
+    fun onSuccess(entity: HomeEntity)
+    fun onError(error: Throwable)
+
+    fun onPaginationSuccess(entity: HomeEntity)
+    fun onPaginationError(error: Throwable)
 }
