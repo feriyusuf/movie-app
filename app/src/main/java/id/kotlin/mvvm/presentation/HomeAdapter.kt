@@ -17,7 +17,7 @@ enum class Type {
 
 class HomeAdapter(private val results: MutableList<HomeEntity.Result?>) : Adapter<ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return when (viewType) {
             Type.DATA.ordinal -> {
                 HomeViewHolder(
@@ -31,7 +31,7 @@ class HomeAdapter(private val results: MutableList<HomeEntity.Result?>) : Adapte
                 )
             }
             Type.LOADING.ordinal -> {
-                HomeViewHolder(
+                LoadingViewHolder(
                     LayoutInflater
                         .from(parent.context)
                         .inflate(
