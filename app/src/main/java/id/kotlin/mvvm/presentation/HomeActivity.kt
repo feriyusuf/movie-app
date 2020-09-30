@@ -29,6 +29,7 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         presenter.discoverMovie()
+        navigationHandler()
     }
 
     override fun onDestroy() {
@@ -104,5 +105,25 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
     private fun hideLoading() {
         adapter?.hideLoading()
         isLoading = false
+    }
+
+    private fun navigationHandler() {
+        bn_home.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+
+                }
+                R.id.navigation_help -> {
+
+                }
+                R.id.navigation_profile -> {
+
+                }
+                R.id.navigation_search -> {
+
+                }
+            }
+            true
+        }
     }
 }
