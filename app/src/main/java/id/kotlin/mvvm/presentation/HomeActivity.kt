@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import dagger.android.support.DaggerAppCompatActivity
 import id.kotlin.mvvm.R
 import id.kotlin.mvvm.domain.HomeEntity
+import id.kotlin.mvvm.model.User
 import kotlinx.android.synthetic.main.activity_home.*
 import javax.inject.Inject
 
@@ -25,6 +26,10 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
     private var isLoading: Boolean = false
     private var currentPage: Long = -1L
 
+    private val user = User(
+        name = "Feri Yusuf",
+        age = 28
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,12 +123,7 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
 
                 }
                 R.id.navigation_profile -> {
-                    startActivity(
-                        Intent(
-                            this,
-                            DetailActivity::class.java
-                        )
-                    )
+                    toDetail()
                 }
                 R.id.navigation_search -> {
 
@@ -131,5 +131,24 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
             }
             true
         }
+    }
+
+    private fun toDetail() {
+        startActivity(
+            Intent(
+                this,
+                DetailActivity::class.java
+            ).apply {
+                putExtra(
+                    User::class.java.simpleName,
+                    user
+                )
+            }
+        )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        bn_home.selectedItemId = R.id.navigation_home
     }
 }
