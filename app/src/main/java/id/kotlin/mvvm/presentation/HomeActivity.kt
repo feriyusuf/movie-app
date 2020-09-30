@@ -1,5 +1,6 @@
 package id.kotlin.mvvm.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -117,7 +118,12 @@ class HomeActivity : DaggerAppCompatActivity(), HomeView {
 
                 }
                 R.id.navigation_profile -> {
-
+                    startActivity(
+                        Intent(
+                            this,
+                            DetailActivity::class.java
+                        )
+                    )
                 }
                 R.id.navigation_search -> {
 
