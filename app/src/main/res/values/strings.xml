@@ -3,5 +3,5 @@
     <string name="menu_help">Help</string>
     <string name="menu_search">Search</string>
     <string name="menu_profile">Profile</string>
-    <string name="menu_home">Profile</string>
+    <string name="menu_home">Home</string>
 </resources>
